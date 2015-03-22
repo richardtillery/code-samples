@@ -3,12 +3,16 @@
 Each project in this repo contains a README directly under the project's directory root - they are also all below:  
 
 ./Java-Projects/TestWebAppCometProject/README
+
 Comet example, coded up against Tomcat 8.0.  Launch main.jsp and watch the Comet!
 
 Also a simple custom tag example.
 
 Yes everything in this project has some variation of my name in it.  I was unemployed when I wrote it,
-cut me some slack../Java-Projects/TestCustomTagsProject/README
+cut me some slack.
+
+./Java-Projects/TestCustomTagsProject/README
+
 This project contains a 'test harness' for the tags in the TestCustomTagsJarProject.  You must jar that project up and 
 include it in the lib folder of this .war for it to work.  To test, request the URL /TestCustomTagsProject/customTagTester (the 
 servlet sets up the test data).
@@ -16,11 +20,17 @@ servlet sets up the test data).
 This project also contains a couple of test jsps that output all the implicit JSP and EL objects - request the url
 /TestCustomTagsProject/objectCheckerRedirect.jsp to test this out.
 
-Note the jsps in this project are in the JSP Document format (as in: well-formed XML documents).  ./Java-Projects/TestDynamicJarProject/README
+Note the jsps in this project are in the JSP Document format (as in: well-formed XML documents).  
+
+./Java-Projects/TestDynamicJarProject/README
+
 This jar contains the SPI configuration to tell the container there is a ServletContainerInitializer it needs to execute when 
 the web app containing this jar is deployed.
 
-It also contains an example of xsd usage and programmatic validation of an xml document with provided xsds../Java-Projects/TestWebEar/README
+It also contains an example of xsd usage and programmatic validation of an xml document with provided xsds.
+
+./Java-Projects/TestWebEar/README
+
 This ear contains 
 	TestWebProject
 	TestWebProject1
@@ -29,10 +39,16 @@ The entire purpose of these two projects is to demonstrate that one web app can 
 
 To demonstrate, hit /TestWebProject/tillery and notice the 'Howdy! null' message. 
 Then hit /TestWebProject1/newtillery. 
-Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched../Java-Projects/TestDynamicWebEar/README
+Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched.
+
+./Java-Projects/TestDynamicWebEar/README
+
 This ear contains
 TestCustomTagsProject (tests custom tags)
-TestDynamicWebProject (test programmatically creating/deploying servlets/filters/listeners)./Java-Projects/TestDynamicWebProject/README
+TestDynamicWebProject (test programmatically creating/deploying servlets/filters/listeners)
+
+./Java-Projects/TestDynamicWebProject/README
+
 This project tests dynamic creation/deployment of servlets/filters/listeners.
 This project needs TestDynamicJarProject in it's lib folder (it doesn't have to be exported as a jar first, let 
 Eclipse do it's thing and automatically include the project in the lib folder).
@@ -44,7 +60,10 @@ To test, use these two URLs:
 	/TestDynamicWebProject/jmesaTest (the declarative method) and 
 	/TestDynamicWebProject/jmesaApiTest (the programmatic method)
 	
-Again, this project is configured for WebLogic, you'll need to remove those project facets and add your own runtime container../Java-Projects/TestCustomTagsJarProject/README
+Again, this project is configured for WebLogic, you'll need to remove those project facets and add your own runtime container.
+
+./Java-Projects/TestCustomTagsJarProject/README
+
 This project MUST be exported into a jar and included in your .war's lib for containers to properly load up the tlds 
 (at least, it does for WebLogic 12.1.3 and Tomcat 8.0).
 
@@ -56,7 +75,10 @@ This project contains a classic tag, several simple tags, and a tag file.
 This project is currently configured as a WebLogic project, you'll need to remove that and add your container's 
 runtime instead.
 
-A reminder: if you use Tomcat, you'll need to download and include the JSTL library in your .war's lib as well../Java-Projects/TestSpringMVCHibernateProject/README
+A reminder: if you use Tomcat, you'll need to download and include the JSTL library in your .war's lib as well.
+
+./Java-Projects/TestSpringMVCHibernateProject/README
+
 This project requires a lot of setup.
 It is currently configured for WebLogic, you'll need to change that to your container.
 It is also set up to hit Oracle DB, you'll need to change that to your DB.  You'll also need to create the schema and tables (just two tables).
@@ -67,7 +89,10 @@ on a person table in the DB.
 This is a Maven project so your version of Eclipse must have that capability (this was made with Eclipse Luna).  Look at the pom and grab those
 jars (or replace them with comparable jars) as needed.  You'll need Maven set up on your box.
 
-This war is not associated with an .ear, so if your container requires that (doesn't create a default for you), you'll need to create one../Java-Projects/TestHibernateJarProject/README
+This war is not associated with an .ear, so if your container requires that (doesn't create a default for you), you'll need to create one.
+
+./Java-Projects/TestHibernateJarProject/README
+
 This project is a java app (not a web app, therefore this doesn't need to run on a container) testing out
 Hibernate; and also testing out a SQL Injection attack (on classic JDBC code).
 See the test case for the 'starting point'.
@@ -90,6 +115,7 @@ PRIMARY KEY (id)
 
 insert into person (id, firstname, lastname) values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");
 ./IBM-ODM-Rules-Project/TestRulesProject/README
+
 
 I do not recommend attempting to import this project into Eclipse - it was created with Rules Designer IDE, a specific 
 'flavor' of Eclipse; I recommend just checking out the code 'manually.'  Unfortunately that means missing out on the pretty
