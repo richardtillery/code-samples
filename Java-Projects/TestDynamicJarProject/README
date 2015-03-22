@@ -1,0 +1,4 @@
+This jar contains the SPI configuration to tell the container there is a ServletContainerInitializer it needs to execute when 
+the web app containing this jar is deployed.
+
+It also contains an example of xsd usage and programmatic validation of an xml document with provided xsds.

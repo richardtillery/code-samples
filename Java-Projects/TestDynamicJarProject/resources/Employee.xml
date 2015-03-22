@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<person>
+  <firstname>Richard</firstname>
+  <lastname>Tillery</lastname>   
+</person>
+ -->
+<employee>
+  <firstname>Richard</firstname>
+  <lastname>Tillery</lastname>
+  <employeeid>1234</employeeid>
+</employee>

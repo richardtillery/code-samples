@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>HealthCheckRuleFlow</name>
+  <uuid>b0fa489a-737f-442b-a557-49bdd787b1fd</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <ActionTask Identifier="task_4">
+        <Actions Language="bal"><![CDATA[set the result of evaluation to "At Risk";]]></Actions>
+      </ActionTask>
+      <ActionTask Identifier="begin">
+        <Actions Language="bal"><![CDATA[print "Begin...";]]>&#13;<![CDATA[
+]]></Actions>
+      </ActionTask>
+      <ActionTask Identifier="Healthy">
+        <Actions Language="bal"><![CDATA[set the result of evaluation to "Healthy";]]></Actions>
+      </ActionTask>
+      <StopTask Identifier="task_5">
+        <Actions Language="bal"><![CDATA[print "End";]]></Actions>
+      </StopTask>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <BranchNode Identifier="node_3"/>
+      <TaskNode Identifier="node_1" Task="task_5"/>
+      <BranchNode Identifier="node_6"/>
+      <BranchNode Identifier="node_7"/>
+      <TaskNode Identifier="node_8" Task="task_4"/>
+      <TaskNode Identifier="node_2" Task="begin"/>
+      <TaskNode Identifier="node_4" Task="Healthy"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_2"/>
+      <Transition Identifier="transition_3" Source="node_3" Target="node_7">
+        <Conditions Language="bal"><![CDATA[the cardiovascular status of person is not null and ]]>&#13;<![CDATA[
+the cardiovascular status of person is BIG_HEART and ]]>&#13;<![CDATA[
+the weight of person is more than 300 ]]></Conditions>
+      </Transition>
+      <Transition Identifier="transition_1" Source="node_3" Target="node_6"/>
+      <Transition Identifier="transition_6" Source="node_6" Target="node_7">
+        <Conditions Language="bal"><![CDATA[the immune system status of person is not null and ]]>&#13;<![CDATA[
+the immune system status of person is DEFICIENT and]]>&#13;<![CDATA[
+the height of person is less than 5.5]]></Conditions>
+      </Transition>
+      <Transition Identifier="transition_7" Source="node_6" Target="node_4"/>
+      <Transition Identifier="transition_8" Source="node_7" Target="node_8">
+        <Conditions Language="bal"><![CDATA[the diagnosis of person is not null and the code of the diagnosis of person is "R1"]]></Conditions>
+      </Transition>
+      <Transition Identifier="transition_9" Source="node_8" Target="node_1"/>
+      <Transition Identifier="transition_10" Source="node_7" Target="node_4"/>
+      <Transition Identifier="transition_2" Source="node_2" Target="node_3"/>
+      <Transition Identifier="transition_4" Source="node_4" Target="node_1"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_8#label">Diagnosis Code R1</Data>
+      <Data Name="node_3#height">36.414215</Data>
+      <Data Name="node_2#height">53.402344</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_4#x">50.0</Data>
+      <Data Name="node_8#x">206.0</Data>
+      <Data Name="node_4#y">487.69666</Data>
+      <Data Name="node_4#name">node_3</Data>
+      <Data Name="node_8#y">487.69666</Data>
+      <Data Name="node_6#height">36.414154</Data>
+      <Data Name="node_3#y">192.60945</Data>
+      <Data Name="node_3#width">36.414215</Data>
+      <Data Name="node_3#name">node_6</Data>
+      <Data Name="node_1#name">node_2</Data>
+      <Data Name="node_7#height">36.414185</Data>
+      <Data Name="node_3#x">109.875015</Data>
+      <Data Name="node_8#name">node_3</Data>
+      <Data Name="node_6#name">node_6</Data>
+      <Data Name="node_1#width">18.000004</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_6#y">279.02368</Data>
+      <Data Name="node_8#height">68.103516</Data>
+      <Data Name="node_6#x">88.27144</Data>
+      <Data Name="node_2#name">node_3</Data>
+      <Data Name="node_2#width">102.0</Data>
+      <Data Name="node_7#x">129.49997</Data>
+      <Data Name="node_0#y">10.5</Data>
+      <Data Name="node_7#name">node_6</Data>
+      <Data Name="node_0#x">109.875</Data>
+      <Data Name="node_4#height">40.0</Data>
+      <Data Name="node_4#width">102.0</Data>
+      <Data Name="node_1#x">129.5</Data>
+      <Data Name="node_6#width">36.414215</Data>
+      <Data Name="node_1#y">580.74854</Data>
+      <Data Name="node_8#width">102.0</Data>
+      <Data Name="node_1#height">18.000072</Data>
+      <Data Name="node_2#x">109.875</Data>
+      <Data Name="node_2#y">95.70117</Data>
+      <Data Name="node_7#y">375.43784</Data>
+      <Data Name="node_7#width">36.414246</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties>
+    <imports><![CDATA[import com.pst.domain.Person;]]>&#13;<![CDATA[
+import com.pst.domain.Diagnosis;]]>&#13;<![CDATA[
+import com.pst.domain.CardiovascularStatus;]]>&#13;<![CDATA[
+import com.pst.domain.ImmuneSystemStatus;]]></imports>
+  </Properties>
+</Ruleflow></rfModel>
+  <mainFlowTask>true</mainFlowTask>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

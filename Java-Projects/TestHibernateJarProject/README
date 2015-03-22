@@ -1,0 +1,21 @@
+This project is a java app (not a web app, therefore this doesn't need to run on a container) testing out
+Hibernate; and also testing out a SQL Injection attack (on classic JDBC code).
+See the test case for the 'starting point'.
+
+The database configuration is targeting mySQL so you'll need to change that for your DB.
+
+Also, this is a Maven project so see the pom.xml for items you'll need in your repo.
+
+Example of how to install into your local repo:
+bond@HAL:~/.m2/repository$ mvn install:install-file -Dfile=/home/bond/lib/hibernate-release-4.3.7.Final/lib/required/hibernate-core-4.3.7.Final.jar -DgroupId=hibernate -DartifactId=hibernate-core -Dversion=4.3.7 -Dpackaging=jar
+
+
+Example of setting up the person table used by the Hibernate example:
+create table person (
+id int(11) NOT NULL AUTO_INCREMENT,
+firstname varchar(50) DEFAULT NULL,
+lastname varchar(50) DEFAULT NULL,
+PRIMARY KEY (id)
+);
+
+insert into person (id, firstname, lastname) values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");

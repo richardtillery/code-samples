@@ -1,0 +1,44 @@
+# Vocabulary Properties
+uuid = 7e6604a6-a986-4841-99c2-866d6df7a4ba
+
+# com.pst.domain.CardiovascularStatus
+com.pst.domain.CardiovascularStatus#concept.label = cardiovascular status
+com.pst.domain.CardiovascularStatus.BIG_HEART#instance.label = BIG_HEART
+com.pst.domain.CardiovascularStatus.WEAK_HEART#instance.label = WEAK_HEART
+com.pst.domain.CardiovascularStatus.valueOf(java.lang.String)#phrase.navigation = cardiovascular status.valueOf({0})
+com.pst.domain.CardiovascularStatus.values()#phrase.navigation = cardiovascular status.values()
+
+# com.pst.domain.Diagnosis
+com.pst.domain.Diagnosis#concept.label = diagnosis
+com.pst.domain.Diagnosis.code#phrase.action = set the code of {this} to {code}
+com.pst.domain.Diagnosis.code#phrase.navigation = {code} of {this}
+
+# com.pst.domain.Employee
+com.pst.domain.Employee#concept.label = employee
+com.pst.domain.Employee.employeeIdentifier#phrase.action = set the employee identifier of {this} to {employee identifier}
+com.pst.domain.Employee.employeeIdentifier#phrase.navigation = {employee identifier} of {this}
+
+# com.pst.domain.Evaluation
+com.pst.domain.Evaluation#concept.label = evaluation
+com.pst.domain.Evaluation.result#phrase.action = set the result of {this} to {result}
+com.pst.domain.Evaluation.result#phrase.navigation = {result} of {this}
+
+# com.pst.domain.ImmuneSystemStatus
+com.pst.domain.ImmuneSystemStatus#concept.label = immune system status
+com.pst.domain.ImmuneSystemStatus.DEFICIENT#instance.label = DEFICIENT
+com.pst.domain.ImmuneSystemStatus.OVERACTIVE#instance.label = OVERACTIVE
+com.pst.domain.ImmuneSystemStatus.valueOf(java.lang.String)#phrase.navigation = immune system status.valueOf({0})
+com.pst.domain.ImmuneSystemStatus.values()#phrase.navigation = immune system status.values()
+
+# com.pst.domain.Person
+com.pst.domain.Person#concept.label = person
+com.pst.domain.Person.cardiovascularStatus#phrase.action = set the cardiovascular status of {this} to {cardiovascular status}
+com.pst.domain.Person.cardiovascularStatus#phrase.navigation = {cardiovascular status} of {this}
+com.pst.domain.Person.diagnosis#phrase.action = set the diagnosis of {this} to {diagnosis}
+com.pst.domain.Person.diagnosis#phrase.navigation = {diagnosis} of {this}
+com.pst.domain.Person.height#phrase.action = set the height of {this} to {height}
+com.pst.domain.Person.height#phrase.navigation = {height} of {this}
+com.pst.domain.Person.immuneSystemStatus#phrase.action = set the immune system status of {this} to {immune system status}
+com.pst.domain.Person.immuneSystemStatus#phrase.navigation = {immune system status} of {this}
+com.pst.domain.Person.weight#phrase.action = set the weight of {this} to {weight}
+com.pst.domain.Person.weight#phrase.navigation = {weight} of {this}

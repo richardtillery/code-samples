@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.irl:IRLRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.irl="http://ilog.rules.studio/model/irl.ecore">
+  <name>DataLoadRule</name>
+  <uuid>35315f3d-e82c-41aa-98ae-f9c49945ac22</uuid>
+  <definition><![CDATA[when {
+	//indicates there are no Person objects in working memory
+	not Person();
+}
+then {
+
+	//fetches person from input (run configuration), inserts into working memory after some modifications
+	insert person;
+	modify person {
+
+		cardiovascularStatus = CardiovascularStatus.WEAK_HEART;    
+		immuneSystemStatus = ImmuneSystemStatus.OVERACTIVE;
+	};
+
+	System.out.println("DataLoadRule - inserted a person into working memory [" + person + "]");
+}]]></definition>
+  <imports><![CDATA[import com.pst.domain.Person;]]></imports>
+  <imports><![CDATA[import com.pst.domain.Diagnosis;]]></imports>
+  <imports><![CDATA[import com.pst.domain.CardiovascularStatus;]]></imports>
+  <imports><![CDATA[import com.pst.domain.ImmuneSystemStatus;]]></imports>
+</ilog.rules.studio.model.irl:IRLRule>

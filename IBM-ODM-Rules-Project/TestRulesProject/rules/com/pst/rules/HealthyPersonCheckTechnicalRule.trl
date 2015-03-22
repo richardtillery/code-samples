@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.irl:IRLRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.irl="http://ilog.rules.studio/model/irl.ecore">
+  <name>HealthyPersonCheckTechnicalRule</name>
+  <uuid>36788cea-77d1-4940-b5b4-a73d27397332</uuid>
+  <definition><![CDATA[when {
+	?person : Person(diagnosis.equals("R1"));
+}
+then {
+    System.out.println("HealthyPersonCheckTechnicalRule - Healthy person has diagnosis [" + ?person.diagnosis + "]");
+}
+]]></definition>
+  <imports><![CDATA[import com.pst.domain.Person;]]></imports>
+</ilog.rules.studio.model.irl:IRLRule>

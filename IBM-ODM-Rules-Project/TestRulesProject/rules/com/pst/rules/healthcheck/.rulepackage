@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>healthcheck</name>
+  <uuid>8b20d6f2-7089-40f9-9081-a2c61984a429</uuid>
+</ilog.rules.studio.model.base:RulePackage>

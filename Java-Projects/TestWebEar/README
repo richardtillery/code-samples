@@ -1,0 +1,9 @@
+This ear contains 
+	TestWebProject
+	TestWebProject1
+
+The entire purpose of these two projects is to demonstrate that one web app can fetch the attributes of another web app's context.
+
+To demonstrate, hit /TestWebProject/tillery and notice the 'Howdy! null' message. 
+Then hit /TestWebProject1/newtillery. 
+Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched.

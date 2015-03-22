@@ -1,0 +1,12 @@
+This project tests dynamic creation/deployment of servlets/filters/listeners.
+This project needs TestDynamicJarProject in it's lib folder (it doesn't have to be exported as a jar first, let 
+Eclipse do it's thing and automatically include the project in the lib folder).
+See ServletContainerInitializerImpl for a starting point in seeing what the code is doing.
+
+This project also contains two JMesa tests, one to test declaratively creating a table and one to test programmatically
+creating a table (note: the programmatically created table's sorting doesn't work, no clue why not).
+To test, use these two URLs: 
+	/TestDynamicWebProject/jmesaTest (the declarative method) and 
+	/TestDynamicWebProject/jmesaApiTest (the programmatic method)
+	
+Again, this project is configured for WebLogic, you'll need to remove those project facets and add your own runtime container.

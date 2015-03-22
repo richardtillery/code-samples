@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>PersonCheckRuleFlow</name>
+  <uuid>71a3166d-41c7-49a0-b809-97ddd9e117e2</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="DataLoadRule" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="81e718e9-2d7e-4464-bad8-fec15b484635"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="HealthyPersonCheckTechnicalRule" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="36788cea-77d1-4940-b5b4-a73d27397332"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="NotHealthyPersonCheckTechnicalRule" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="71bb6c19-b1a0-4e30-8033-6aec1f4a7761"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_4"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="DataLoadRule"/>
+      <TaskNode Identifier="node_2" Task="HealthyPersonCheckTechnicalRule"/>
+      <TaskNode Identifier="node_3" Task="NotHealthyPersonCheckTechnicalRule"/>
+      <TaskNode Identifier="node_4" Task="task_4"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_1"/>
+      <Transition Identifier="transition_1" Source="node_1" Target="node_2"/>
+      <Transition Identifier="transition_2" Source="node_2" Target="node_3"/>
+      <Transition Identifier="transition_3" Source="node_3" Target="node_4"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_3#height">40.0</Data>
+      <Data Name="node_2#height">40.0</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_4#x">124.7168</Data>
+      <Data Name="node_4#y">352.0</Data>
+      <Data Name="node_4#name">node_2</Data>
+      <Data Name="node_3#width">249.4336</Data>
+      <Data Name="node_3#y">271.0</Data>
+      <Data Name="node_3#name">node_3</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_3#x">124.7168</Data>
+      <Data Name="node_1#width">118.72266</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_2#width">230.75977</Data>
+      <Data Name="node_0#y">10.5</Data>
+      <Data Name="node_0#x">124.7168</Data>
+      <Data Name="node_4#height">22.0</Data>
+      <Data Name="node_1#x">124.7168</Data>
+      <Data Name="node_4#width">22.0</Data>
+      <Data Name="node_1#y">91.0</Data>
+      <Data Name="node_1#height">40.0</Data>
+      <Data Name="node_2#x">124.7168</Data>
+      <Data Name="node_2#y">181.0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow></rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

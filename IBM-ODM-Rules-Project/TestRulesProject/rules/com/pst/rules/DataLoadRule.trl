@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.irl:IRLRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.irl="http://ilog.rules.studio/model/irl.ecore">
+  <name>DataLoadRule</name>
+  <uuid>81e718e9-2d7e-4464-bad8-fec15b484635</uuid>
+  <definition><![CDATA[when {
+	//indicates there are no Person objects in working memory
+	not Person();
+}
+then {
+	//fetches person from input (run configuration), inserts into working memory
+	insert person;
+	System.out.println("DataLoadRule - inserted a person into working memory");
+}]]></definition>
+  <imports><![CDATA[import com.pst.domain.Person;]]></imports>
+</ilog.rules.studio.model.irl:IRLRule>

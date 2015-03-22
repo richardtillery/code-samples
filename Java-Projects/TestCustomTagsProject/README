@@ -1,0 +1,8 @@
+This project contains a 'test harness' for the tags in the TestCustomTagsJarProject.  You must jar that project up and 
+include it in the lib folder of this .war for it to work.  To test, request the URL /TestCustomTagsProject/customTagTester (the 
+servlet sets up the test data).
+
+This project also contains a couple of test jsps that output all the implicit JSP and EL objects - request the url
+/TestCustomTagsProject/objectCheckerRedirect.jsp to test this out.
+
+Note the jsps in this project are in the JSP Document format (as in: well-formed XML documents).  

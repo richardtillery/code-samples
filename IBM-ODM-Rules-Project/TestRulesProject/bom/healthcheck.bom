@@ -1,0 +1,56 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/TestRulesProject//TestDomain"
+property uuid "eddf27f2-cad4-4a50-823b-6722f62423be"
+package com.pst.domain;
+
+
+public final class CardiovascularStatus
+        extends java.lang.Enum
+{
+    domain {static WEAK_HEART, static BIG_HEART}
+    public static final readonly com.pst.domain.CardiovascularStatus BIG_HEART;
+    public static final readonly com.pst.domain.CardiovascularStatus WEAK_HEART;
+    public static com.pst.domain.CardiovascularStatus valueOf(string arg);
+    public static com.pst.domain.CardiovascularStatus[] values();
+}
+
+public class Diagnosis
+{
+    public string code;
+    public Diagnosis();
+}
+
+public class Employee
+        extends com.pst.domain.Person
+{
+    public string employeeIdentifier;
+    public Employee();
+}
+
+public class Evaluation
+{
+    public string result;
+    public Evaluation();
+}
+
+public final class ImmuneSystemStatus
+        extends java.lang.Enum
+{
+    domain {static OVERACTIVE, static DEFICIENT}
+    public static final readonly com.pst.domain.ImmuneSystemStatus DEFICIENT;
+    public static final readonly com.pst.domain.ImmuneSystemStatus OVERACTIVE;
+    public static com.pst.domain.ImmuneSystemStatus valueOf(string arg);
+    public static com.pst.domain.ImmuneSystemStatus[] values();
+}
+
+public class Person
+{
+    public com.pst.domain.CardiovascularStatus cardiovascularStatus;
+    public com.pst.domain.Diagnosis diagnosis;
+    public java.lang.Float height;
+    public com.pst.domain.ImmuneSystemStatus immuneSystemStatus;
+    public java.lang.Integer weight;
+    public Person();
+}
+

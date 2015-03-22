@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.tillery.model" schema="richdb">
+<!-- 
+     <class name="Person" table="person" schema="richdb">
+      	<id name="id" type="integer" column="id">
+      	  <generator class="native"></generator>
+      	</id>
+        <property name="firstName" column="firstname" length="50" type="string" />
+        <property name="lastName" column="lastname" length="50" type="string" />        
+    </class>
+ -->
+<!--      
+	<query name="fetchAllPeople">
+        <![CDATA[from Person]]>
+    </query>
+-->
+</hibernate-mapping>

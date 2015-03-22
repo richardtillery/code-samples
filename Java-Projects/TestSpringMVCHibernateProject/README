@@ -1,0 +1,11 @@
+This project requires a lot of setup.
+It is currently configured for WebLogic, you'll need to change that to your container.
+It is also set up to hit Oracle DB, you'll need to change that to your DB.  You'll also need to create the schema and tables (just two tables).
+
+This project is a Spring MVC + Hibernate example.  JQuery is used in the UI to make Ajax calls.  The UI allows for CRUD operations 
+on a person table in the DB.
+
+This is a Maven project so your version of Eclipse must have that capability (this was made with Eclipse Luna).  Look at the pom and grab those
+jars (or replace them with comparable jars) as needed.  You'll need Maven set up on your box.
+
+This war is not associated with an .ear, so if your container requires that (doesn't create a default for you), you'll need to create one.
