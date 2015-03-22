@@ -114,6 +114,8 @@ PRIMARY KEY (id)
 );
 
 insert into person (id, firstname, lastname) values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");
+
+
 ./IBM-ODM-Rules-Project/TestRulesProject/README
 
 
