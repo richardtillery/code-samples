@@ -1,5 +1,3 @@
-# babys-first-code
-
 Each project in this repo contains a README directly under the project's directory root - they are also all below:  
 
 ./Java-Projects/TestWebAppCometProject/README
