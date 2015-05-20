@@ -1,0 +1,12 @@
+Project containing Web Service(s) and Clients:
+
+1) PersonRESTService and client - a @WebServiceProvider implementation, a REST service via JAX-WS.  
+The Client communicates using core java.net APIs.  Also included is a method to communicate using Apache Commons HttpConnection.
+TODO: BUG: the Source is always null on the Service-side, it is never set to the HTTP body/message.
+
+2) PersonSOAPService and client - a @WebServiceProvider implementation, a JAX-WS service using SOAP.
+The Client communicates using core java.net APIs.  
+
+3) GeneratedPersonSoapService and client - a @WebService for which Eclipse's built-in tools (using Apache Axis) generated the 
+WSDL and mapping(s).  To test, install this project to Tomcat.  The client tests using core java.net APIs.
+
