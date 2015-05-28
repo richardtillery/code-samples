@@ -14,6 +14,7 @@ import org.apache.commons.httpclient.HttpState;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.URI;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.methods.StringRequestEntity;
 
 import com.pst.test.service.PersonRESTService;
 
@@ -28,19 +29,10 @@ public class PersonRESTClient {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		Endpoint endpoint = null;
 		HttpConnection hconn = null;
-		try {
-			endpoint = Endpoint.publish("http://localhost:8182/personservice", new PersonRESTService());
+		try {			
+			endpoint = Endpoint.publish("http://localhost:8189/personservice", new PersonRESTService());
 			//useApacheCommonsInstead(endpoint, hconn);
-			URL url = new URL("http://localhost:8182/personservice");// + "?testParam=testValue");
-			HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
-			urlc.setRequestMethod("POST");
-			urlc.setDoInput(true);
-			urlc.setDoOutput(true);
-			DataOutputStream dos = new DataOutputStream(urlc.getOutputStream());
-			dos.write("testParam=testValue".getBytes());
-			dos.flush();
-			dos.close();
-			System.out.println("Response = [" + urlc.getResponseCode() + "]");
+			useCoreAPIInstead(endpoint, hconn);
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -50,9 +42,23 @@ public class PersonRESTClient {
 				hconn.close();
 		}
 	}
+
+	private static void useCoreAPIInstead(Endpoint endpoint, HttpConnection hconn) throws NullPointerException, IOException {
+		URL url = new URL("http://localhost:8189/personservice");// + "?testParam=testValue");
+		HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
+		urlc.setRequestMethod("POST");
+		urlc.setRequestProperty("Content-Type", "text/xml");
+		urlc.setDoInput(true);
+		urlc.setDoOutput(true);
+		DataOutputStream dos = new DataOutputStream(urlc.getOutputStream());
+		dos.write("<root><person1>Richard</person1><person2>Tillery</person2></root>".getBytes());
+		dos.flush();
+		dos.close();
+		System.out.println("Response = [" + urlc.getResponseCode() + "]");
+	}
 	
-	private void useApacheCommonsInstead(Endpoint endpoint, HttpConnection hconn) throws NullPointerException, IOException {
-		URI uri = new URI("http://localhost:8182/personservice", false);
+	private static void useApacheCommonsInstead(Endpoint endpoint, HttpConnection hconn) throws NullPointerException, IOException {
+		URI uri = new URI("http://localhost:8189/personservice", false);
 		HostConfiguration hc = new HostConfiguration();
 		hc.setHost(uri);			
 		
@@ -61,11 +67,10 @@ public class PersonRESTClient {
 		          new NameValuePair("user", "blah"),
 		          new NameValuePair("password", "blaaah")
 		};
-		postMethod.setRequestBody(data);
+		postMethod.setRequestHeader(new Header("Content-Type", "text/xml"));
+		postMethod.setRequestEntity(new StringRequestEntity("<root><person1>Richard</person1><person2>Tillery</person2></root>", null, null));
 		postMethod.setContentChunked(true);
-		postMethod.setParameter("param", "paramValue");
 		postMethod.setQueryString(data);
-		postMethod.setRequestHeader(new Header("Rich", "Value"));
 		hconn = new HttpConnection(hc);
 		hconn.open();
 		int returnCode = postMethod.execute(new HttpState(), hconn);

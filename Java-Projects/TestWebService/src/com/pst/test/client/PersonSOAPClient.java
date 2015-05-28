@@ -14,7 +14,7 @@ public class PersonSOAPClient {
 		Endpoint endpoint = null;
 		try {
 			endpoint = Endpoint.publish("http://localhost:8182/personservice", new PersonSOAPService());
-			Thread.sleep(1000 * 60);
+			//Thread.sleep(1000 * 60);
 
 			URL url = new URL("http://localhost:8182/personservice");
 			HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
@@ -26,7 +26,7 @@ public class PersonSOAPClient {
 			dos.flush();
 			dos.close();
 			System.out.println("Response = [" + urlc.getResponseCode() + "]");
-	
+			Thread.sleep(1000 * 30);
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
