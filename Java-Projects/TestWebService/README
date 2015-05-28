@@ -2,7 +2,6 @@ Project containing Web Service(s) and Clients:
 
 1) PersonRESTService and client - a @WebServiceProvider implementation, a REST service via JAX-WS.  
 The Client communicates using core java.net APIs.  Also included is a method to communicate using Apache Commons HttpConnection.
-TODO: BUG: the Source is always null on the Service-side, it is never set to the HTTP body/message.
 
 2) PersonSOAPService and client - a @WebServiceProvider implementation, a JAX-WS service using SOAP.
 The Client communicates using core java.net APIs.  
