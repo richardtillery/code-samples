@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GeneratedPersonSOAPServiceService" targetNamespace="http://service.test.pst.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.test.pst.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://service.test.pst.com/" schemaLocation="generatedpersonsoapservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="fetchPerson">
+    <wsdl:part name="parameters" element="tns:fetchPerson">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="fetchPersonResponse">
+    <wsdl:part name="parameters" element="tns:fetchPersonResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GeneratedPersonSOAPService">
+    <wsdl:operation name="fetchPerson">
+      <wsdl:input name="fetchPerson" message="tns:fetchPerson">
+    </wsdl:input>
+      <wsdl:output name="fetchPersonResponse" message="tns:fetchPersonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GeneratedPersonSOAPServiceServiceSoapBinding" type="tns:GeneratedPersonSOAPService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="fetchPerson">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="fetchPerson">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="fetchPersonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneratedPersonSOAPServiceService">
+    <wsdl:port name="GeneratedPersonSOAPServicePort" binding="tns:GeneratedPersonSOAPServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8082/GeneratedPersonSOAPServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

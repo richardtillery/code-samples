@@ -1,0 +1,19 @@
+<xs:schema xmlns:tns="http://service.test.pst.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.test.pst.com/" version="1.0">
+
+  <xs:element name="fetchSpecificPersonMessage" type="tns:fetchSpecificPersonMessage"/>
+
+  <xs:element name="fetchSpecificPersonMessageResponse" type="tns:fetchSpecificPersonMessageResponse"/>
+
+  <xs:complexType name="fetchSpecificPersonMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="personName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fetchSpecificPersonMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

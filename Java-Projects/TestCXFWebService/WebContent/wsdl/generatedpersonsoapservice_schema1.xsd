@@ -1,0 +1,17 @@
+<xs:schema xmlns:tns="http://service.test.pst.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://service.test.pst.com/" version="1.0">
+
+  <xs:element name="fetchPerson" type="tns:fetchPerson"/>
+
+  <xs:element name="fetchPersonResponse" type="tns:fetchPersonResponse"/>
+
+  <xs:complexType name="fetchPerson">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="fetchPersonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

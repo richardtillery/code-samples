@@ -1,0 +1,9 @@
+Web Service generated/deployed with Apache CXF
+
+The Eclipse 'wizard' to generate a service via CXF did not initially fill in the contents of the cxf-beans.xml (or I did something wrong), 
+had to populate the spring bean entry with the @WebService pojo and the jaxws:endpoint entry.
+For the second Web Service I generated, it *did* fill in cxf-beans.xml for me.
+
+Note that CXF appends a / onto the namespace (while Axis does not):
+    CXF: http://service.test.pst.com/
+    Axis: http://service.test.pst.com
