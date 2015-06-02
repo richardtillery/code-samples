@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.1">
+
+    <xs:element name="person" type="persontype"></xs:element>
+    
+    <xs:complexType name="persontype">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" minOccurs="1" />
+            <xs:element name="lastname" type="xs:string" minOccurs="1" />
+            <xs:element name="healthy" type="xs:boolean" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
