@@ -2,6 +2,7 @@
 
 <head>
 <title>PersonUI</title>
+<%@ taglib prefix="richTags" uri="http://com.pst/tags/richTags" %>
 <link rel="stylesheet" type="text/css" href="${ pageContext.request.contextPath }/css/jquery-ui.css"/>
 <script src="${ pageContext.request.contextPath }/js/jquery-2.1.3.js"></script>
 <script src="${ pageContext.request.contextPath }/js/jquery-ui.js"></script>
@@ -243,7 +244,7 @@
 
 <body onload="javascript:fetchPeople();">
 <div class="main">
-    <!-- <div id="greeting">${greeting}</div>  -->
+    <div>Yes: ${richTags:displayMappingSource(SpringMVCStoredAttribute)}</div>
     <div id="people-table" style="display:none;">
 		<table>
 		<thead>

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +34,7 @@ public class PersonController {
 	@RequestMapping(value={"/personUI"}, method={RequestMethod.GET})
 	public ModelAndView returnPersonUI() {
 		ModelAndView modalAndView = new ModelAndView("personUI");
+		modalAndView.addObject("SpringMVCStoredAttribute", "V");
 		return modalAndView;
 	}
 
