@@ -8,7 +8,9 @@ import java.util.Random;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.HeuristicCompletionException;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  */
 @Component
-@Transactional(propagation=Propagation.REQUIRED)
+@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=HeuristicCompletionException.class)
 public class BankService {
 
 	@Inject
@@ -26,7 +28,6 @@ public class BankService {
 	public void doTransaction() {
 		this.doDebt();
 		this.doCredit();
-		txManager.commit(null);
 	}
 	
 	public void doDebt() {
@@ -34,10 +35,8 @@ public class BankService {
         Random rg = new Random();
         int binaryNum = rg.nextInt(8);
         if(binaryNum == 1) {
-        	txManager.rollback(null);
-        	throw new RuntimeException("TRANSACTION FAILED!!!!!1!");
+        	throw new HeuristicCompletionException(HeuristicCompletionException.STATE_UNKNOWN, new RuntimeException("TRANSACTION FAILED!!!!!1! by choice"));
         }
-
 	}
 
 	public void doCredit() {

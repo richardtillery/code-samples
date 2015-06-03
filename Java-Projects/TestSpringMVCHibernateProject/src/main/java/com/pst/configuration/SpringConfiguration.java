@@ -11,6 +11,7 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionException;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.support.SimpleTransactionStatus;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
@@ -74,7 +75,8 @@ public class SpringConfiguration {
 					throws TransactionException {
 				System.out.println(Thread.currentThread().getId()
 						+ "|Get Transaction");
-				return null;
+				SimpleTransactionStatus sts = new SimpleTransactionStatus();
+				return sts;
 			}
 
 			@Override
