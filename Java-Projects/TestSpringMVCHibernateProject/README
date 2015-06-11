@@ -20,3 +20,32 @@ jars) as needed.  You'll need Maven set up on your box.
 
 This war is not associated with an .ear, so if your container requires that (doesn't create 
 a default for you), you'll need to create one.
+
+Also included is a Jersey REST implemenation, after deploying run this:
+	curl http://localhost:7001/TestSpringMVCHibernateProject/rest/application.wadl
+to fetch WADL for the entire resource, or try
+    curl -X OPTIONS http://localhost:7001/TestSpringMVCHibernateProject/rest/wadlServlet/getWADL
+    curl -X OPTIONS http://localhost:7001/TestSpringMVCHibernateProject/rest/wadlServlet/postWADL
+to fetch WADL for a specific operation.
+
+$ curl http://localhost:7001/TestSpringMVCHibernateProject/rest/application.wadl
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:application xmlns:ns0="http://wadl.dev.java.net/2009/02">
+   <ns0:doc xmlns:ns1="http://jersey.java.net/" ns1:generatedBy="Jersey: 2.5.1 2014-01-02 13:43:00"/>
+   <ns0:doc xmlns:ns2="http://jersey.java.net/" ns2:hint="This is simplified WADL with user and core resources only. To get full WADL with extended resources use the query parameter detail. Link: http://localhost:7001/TestSpringMVCHibernateProject/rest/application.wadl?detail=true"/>
+   <ns0:grammars/>
+   <ns0:resources base="http://localhost:7001/TestSpringMVCHibernateProject/rest/">
+      <ns0:resource path="/wadlServlet">
+         <ns0:resource path="/getWADL">
+            <ns0:method id="getWADL" name="GET">
+               <ns0:response/>
+            </ns0:method>
+         </ns0:resource>
+         <ns0:resource path="/postWADL">
+            <ns0:method id="postWADL" name="POST">
+               <ns0:response/>
+            </ns0:method>
+         </ns0:resource>
+      </ns0:resource>
+   </ns0:resources>
+</ns0:application>
