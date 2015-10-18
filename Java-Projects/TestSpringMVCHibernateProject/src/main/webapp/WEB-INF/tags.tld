@@ -6,13 +6,13 @@
 
 	<description>Spring Framework JSP Form Tag Library</description>
 	<tlib-version>1.0</tlib-version>
-	<short-name>richTags</short-name>
-	<uri>http://com.pst/tags/richTags</uri>
+	<short-name>testTags</short-name>
+	<uri>http://com.pst/tags/testTags</uri>
 
 	<function>
-	  <name>displayMappingSource</name>
+	  <name>displayTime</name>
 	  <function-class>com.pst.tags.CustomFunctions</function-class>
-	  <function-signature>java.lang.String displayMappingSource(java.lang.Boolean)</function-signature>
+	  <function-signature>java.lang.String displayTime(java.lang.String)</function-signature>
 	</function>
 		
 </taglib>

@@ -1,5 +1,6 @@
 package com.pst.controller;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +35,7 @@ public class PersonController {
 	@RequestMapping(value={"/personUI"}, method={RequestMethod.GET})
 	public ModelAndView returnPersonUI() {
 		ModelAndView modalAndView = new ModelAndView("personUI");
-		modalAndView.addObject("SpringMVCStoredAttribute", "V");
+		modalAndView.addObject("datetime", Calendar.getInstance().getTime());
 		return modalAndView;
 	}
 
