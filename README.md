@@ -1,6 +1,6 @@
 Each project in this repo contains a README directly under the project's directory root - they are also all below:  
 
-./Java-Projects/TestWebAppCometProject/README
+# Java-Projects/TestWebAppCometProject
 
 Comet example, coded up against Tomcat 8.0.  Launch main.jsp and watch the Comet!
 
@@ -9,7 +9,7 @@ Also a simple custom tag example.
 Yes everything in this project has some variation of my name in it.  I was unemployed when I wrote it,
 cut me some slack.
 
-./Java-Projects/TestCustomTagsProject/README
+# Java-Projects/TestCustomTagsProject
 
 This project contains a 'test harness' for the tags in the TestCustomTagsJarProject.  You must jar that project up and 
 include it in the lib folder of this .war for it to work.  To test, request the URL /TestCustomTagsProject/customTagTester (the 
@@ -20,14 +20,14 @@ This project also contains a couple of test jsps that output all the implicit JS
 
 Note the jsps in this project are in the JSP Document format (as in: well-formed XML documents).  
 
-./Java-Projects/TestDynamicJarProject/README
+# Java-Projects/TestDynamicJarProject
 
 This jar contains the SPI configuration to tell the container there is a ServletContainerInitializer it needs to execute when 
 the web app containing this jar is deployed.
 
 It also contains an example of xsd usage and programmatic validation of an xml document with provided xsds.
 
-./Java-Projects/TestWebEar/README
+# Java-Projects/TestWebEar
 
 This ear contains 
 	TestWebProject
@@ -37,15 +37,15 @@ The entire purpose of these two projects is to demonstrate that one web app can 
 
 To demonstrate, hit /TestWebProject/tillery and notice the 'Howdy! null' message. 
 Then hit /TestWebProject1/newtillery. 
-Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched.
+Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched
 
-./Java-Projects/TestDynamicWebEar/README
+# Java-Projects/TestDynamicWebEar
 
 This ear contains
 TestCustomTagsProject (tests custom tags)
 TestDynamicWebProject (test programmatically creating/deploying servlets/filters/listeners)
 
-./Java-Projects/TestDynamicWebProject/README
+# Java-Projects/TestDynamicWebProject
 
 This project tests dynamic creation/deployment of servlets/filters/listeners.
 This project needs TestDynamicJarProject in it's lib folder (it doesn't have to be exported as a jar first, let 
@@ -60,7 +60,7 @@ To test, use these two URLs:
 	
 Again, this project is configured for WebLogic, you'll need to remove those project facets and add your own runtime container.
 
-./Java-Projects/TestCustomTagsJarProject/README
+# Java-Projects/TestCustomTagsJarProject
 
 This project MUST be exported into a jar and included in your .war's lib for containers to properly load up the tlds 
 (at least, it does for WebLogic 12.1.3 and Tomcat 8.0).
@@ -75,7 +75,7 @@ runtime instead.
 
 A reminder: if you use Tomcat, you'll need to download and include the JSTL library in your .war's lib as well.
 
-./Java-Projects/TestSpringMVCHibernateProject/README
+# Java-Projects/TestSpringMVCHibernateProject
 
 This project requires a lot of setup.
 It is currently configured for WebLogic, you'll need to change that to your container.
@@ -89,7 +89,7 @@ jars (or replace them with comparable jars) as needed.  You'll need Maven set up
 
 This war is not associated with an .ear, so if your container requires that (doesn't create a default for you), you'll need to create one.
 
-./Java-Projects/TestHibernateJarProject/README
+# Java-Projects/TestHibernateJarProject
 
 This project is a java app (not a web app, therefore this doesn't need to run on a container) testing out
 Hibernate; and also testing out a SQL Injection attack (on classic JDBC code).
@@ -114,7 +114,7 @@ PRIMARY KEY (id)
 insert into person (id, firstname, lastname) values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");
 
 
-./IBM-ODM-Rules-Project/TestRulesProject/README
+# IBM-ODM-Rules-Project/TestRulesProject
 
 
 I do not recommend attempting to import this project into Eclipse - it was created with Rules Designer IDE, a specific 
@@ -136,3 +136,29 @@ The other two rule flows are executed by the Rules Designer IDE (run as 'Java Ap
 Run Configuration) but they each must be set as the main rule flow first (Properties tab of each file - this is also Rules Designer IDE
 specific).
 These two rule flows no longer 'work' (due to changes in the domain POJOs) but provide examples of Action Rules, BAL and IRL.
+
+# Java-Projects/TestWebService
+
+Project containing Web Service(s) and Clients:
+
+1) PersonRESTService and client - a @WebServiceProvider implementation, a REST service via JAX-WS.  
+The Client communicates using core java.net APIs.  Also included is a method to communicate using Apache Commons HttpConnection.
+
+2) PersonSOAPService and client - a @WebServiceProvider implementation, a JAX-WS service using SOAP.
+The Client communicates using core java.net APIs.  
+
+3) GeneratedPersonSoapService and client - a @WebService for which Eclipse's built-in tools (using Apache Axis) generated the 
+WSDL and mapping(s).  To test, install this project to Tomcat.  The client tests using core java.net APIs.
+
+
+# Java-Projects/TestCXFWebService
+
+Web Service generated/deployed with Apache CXF
+
+The Eclipse 'wizard' to generate a service via CXF did not initially fill in the contents of the cxf-beans.xml (or I did something wrong), 
+had to populate the spring bean entry with the @WebService pojo and the jaxws:endpoint entry.
+For the second Web Service I generated, it *did* fill in cxf-beans.xml for me.
+
+Note that CXF appends a / onto the namespace (while Axis does not):
+    CXF: http://service.test.pst.com/
+    Axis: http://service.test.pst.com
