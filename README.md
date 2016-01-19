@@ -6,9 +6,6 @@ Comet example, coded up against Tomcat 8.0.  Launch main.jsp and watch the Comet
 
 Also a simple custom tag example.
 
-Yes everything in this project has some variation of my name in it.  I was unemployed when I wrote it,
-cut me some slack.
-
 # Java-Projects/TestCustomTagsProject
 
 This project contains a 'test harness' for the tags in the TestCustomTagsJarProject.  You must jar that project up and 
@@ -29,20 +26,20 @@ It also contains an example of xsd usage and programmatic validation of an xml d
 
 # Java-Projects/TestWebEar
 
-This ear contains 
-	TestWebProject
+This ear contains   
+	TestWebProject  
 	TestWebProject1
 
 The entire purpose of these two projects is to demonstrate that one web app can fetch the attributes of another web app's context.
 
-To demonstrate, hit /TestWebProject/tillery and notice the 'Howdy! null' message. 
-Then hit /TestWebProject1/newtillery. 
+To demonstrate, hit /TestWebProject/tillery and notice the 'Howdy! null' message.   
+Then hit /TestWebProject1/newtillery.   
 Then hit /TestWebProject/tillery and notice the null is gone - the other app set an attribute the first app fetched
 
 # Java-Projects/TestDynamicWebEar
 
-This ear contains
-TestCustomTagsProject (tests custom tags)
+This ear contains  
+TestCustomTagsProject (tests custom tags)  
 TestDynamicWebProject (test programmatically creating/deploying servlets/filters/listeners)
 
 # Java-Projects/TestDynamicWebProject
@@ -55,8 +52,9 @@ See ServletContainerInitializerImpl for a starting point in seeing what the code
 This project also contains two JMesa tests, one to test declaratively creating a table and one to test programmatically
 creating a table (note: the programmatically created table's sorting doesn't work, no clue why not).
 To test, use these two URLs: 
-	/TestDynamicWebProject/jmesaTest (the declarative method) and 
-	/TestDynamicWebProject/jmesaApiTest (the programmatic method)
+
+		/TestDynamicWebProject/jmesaTest (the declarative method) and 
+		/TestDynamicWebProject/jmesaApiTest (the programmatic method)
 	
 Again, this project is configured for WebLogic, you'll need to remove those project facets and add your own runtime container.
 
@@ -78,40 +76,46 @@ A reminder: if you use Tomcat, you'll need to download and include the JSTL libr
 # Java-Projects/TestSpringMVCHibernateProject
 
 This project requires a lot of setup.
-It is currently configured for WebLogic, you'll need to change that to your container.
+It is currently configured for WebLogic, you'll need to change that to your container.  
 It is also set up to hit Oracle DB, you'll need to change that to your DB.  You'll also need to create the schema and tables (just two tables).
 
-This project is a Spring MVC + Hibernate example.  JQuery is used in the UI to make Ajax calls.  The UI allows for CRUD operations 
-on a person table in the DB.
+This project is a Spring MVC + Hibernate example.  JQuery is used in the UI to make Ajax calls.  The UI allows for CRUD operations on a person table in the DB.
 
-This is a Maven project so your version of Eclipse must have that capability (this was made with Eclipse Luna).  Look at the pom and grab those
-jars (or replace them with comparable jars) as needed.  You'll need Maven set up on your box.
+This is a Maven project so your version of Eclipse must have that capability (this was made with Eclipse Luna).  Look at the pom and grab those jars (or replace them with comparable jars) as needed.  You'll need Maven set up on your box.
 
 This war is not associated with an .ear, so if your container requires that (doesn't create a default for you), you'll need to create one.
 
 # Java-Projects/TestHibernateJarProject
 
 This project is a java app (not a web app, therefore this doesn't need to run on a container) testing out
-Hibernate; and also testing out a SQL Injection attack (on classic JDBC code).
+Hibernate; and also testing out a SQL Injection attack (on classic JDBC code).  
 See the test case for the 'starting point'.
 
 The database configuration is targeting mySQL so you'll need to change that for your DB.
 
 Also, this is a Maven project so see the pom.xml for items you'll need in your repo.
 
-Example of how to install into your local repo:
-bond@HAL:~/.m2/repository$ mvn install:install-file -Dfile=/home/bond/lib/hibernate-release-4.3.7.Final/lib/required/hibernate-core-4.3.7.Final.jar -DgroupId=hibernate -DartifactId=hibernate-core -Dversion=4.3.7 -Dpackaging=jar
+Example of how to install into your local repo:  
+
+	bond@HAL:~/.m2/repository$ mvn install:install-file 
+	-Dfile=/home/bond/lib/hibernate-release-4.3.7.Final/lib/required/hibernate-core-4.3.7.Final.jar 
+	-DgroupId=hibernate 
+	-DartifactId=hibernate-core 
+	-Dversion=4.3.7 
+	-Dpackaging=jar
 
 
 Example of setting up the person table used by the Hibernate example:
-create table person (
-id int(11) NOT NULL AUTO_INCREMENT,
-firstname varchar(50) DEFAULT NULL,
-lastname varchar(50) DEFAULT NULL,
-PRIMARY KEY (id)
-);
 
-insert into person (id, firstname, lastname) values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");
+	create table person (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	firstname varchar(50) DEFAULT NULL,
+	lastname varchar(50) DEFAULT NULL,
+	PRIMARY KEY (id)
+	);
+
+	insert into person (id, firstname, lastname) 
+	values (1, "Rich1", "Tillery1"), (2, "Rich2", "Tillery2");
 
 
 # IBM-ODM-Rules-Project/TestRulesProject
@@ -160,5 +164,6 @@ had to populate the spring bean entry with the @WebService pojo and the jaxws:en
 For the second Web Service I generated, it *did* fill in cxf-beans.xml for me.
 
 Note that CXF appends a / onto the namespace (while Axis does not):
-    CXF: http://service.test.pst.com/
-    Axis: http://service.test.pst.com
+
+	CXF: http://service.test.pst.com/
+	Axis: http://service.test.pst.com
