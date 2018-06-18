@@ -3,8 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccounts_testdeploystore_name": {
-            "defaultValue": "testdeploystore",
-            "type": "string"
+          "defaultValue": "testdeploystore"
         }
     }
   }
