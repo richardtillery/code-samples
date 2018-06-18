@@ -4,7 +4,7 @@
     "parameters": {
         "storageAccounts_testdeploystore_name": {
             "defaultValue": "testdeploystore",
-            "type": "String"
+            "type": "string"
         }
     }
   }
